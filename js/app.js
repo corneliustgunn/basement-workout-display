@@ -8,14 +8,23 @@
   document.getElementById('loading').classList.add('hidden');
   document.getElementById('app').classList.remove('hidden');
 
+  // ─── State ─────────────────────────────────────────────────
+  let selectedDate = new Date();
+  let quoteIntervalId = null;
+
   // ─── Date Calculation ──────────────────────────────────────
   const PROGRAM_START = new Date('2026-04-06T00:00:00');
+  const PROGRAM_END_EXCLUSIVE = new Date('2027-04-05T00:00:00'); // day after last program day
   const DAYS = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
   const DAY_LABELS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
+  function toLocalDate(date) {
+    return new Date(date.getFullYear(), date.getMonth(), date.getDate());
+  }
+
   function getProgramInfo(date) {
-    const today = new Date(date.getFullYear(), date.getMonth(), date.getDate());
-    const start = new Date(PROGRAM_START.getFullYear(), PROGRAM_START.getMonth(), PROGRAM_START.getDate());
+    const today = toLocalDate(date);
+    const start = toLocalDate(PROGRAM_START);
     const diffMs = today - start;
     const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
 
@@ -23,20 +32,19 @@
       return { status: 'pre', daysUntilStart: Math.abs(diffDays), dayOfWeek: DAYS[today.getDay()] };
     }
 
-    const totalWeeks = 52; // 13 cycles × 4 weeks
+    const totalWeeks = 52; // 13 cycles x 4 weeks
     const weekNumber = Math.floor(diffDays / 7); // 0-indexed
 
     if (weekNumber >= totalWeeks) {
       return { status: 'post', dayOfWeek: DAYS[today.getDay()] };
     }
 
-    const cycle = Math.floor(weekNumber / 4) + 1;       // 1-indexed
-    const weekInCycle = (weekNumber % 4) + 1;            // 1-4 (4 = deload)
+    const cycle = Math.floor(weekNumber / 4) + 1;
+    const weekInCycle = (weekNumber % 4) + 1;
     const dayOfWeek = DAYS[today.getDay()];
     const isDeload = weekInCycle === 4;
     const fiveThreeOneWeek = isDeload ? 'deload' : String(weekInCycle);
 
-    // Determine BBB percentage for this cycle
     let bbbPercent = 0.50;
     for (const prog of workouts.bbbProgression) {
       if (prog.cycles.includes(cycle)) {
@@ -45,7 +53,6 @@
       }
     }
 
-    // Get cardio block from calendar if available
     let cardioBlock = '';
     const calWeek = workouts.calendar.find(w => w.week === weekNumber + 1);
     if (calWeek) cardioBlock = calWeek.cardioBlock;
@@ -111,6 +118,40 @@
   }
   shuffleQuotes();
 
+  function stopQuoteRotation() {
+    if (quoteIntervalId) {
+      clearInterval(quoteIntervalId);
+      quoteIntervalId = null;
+    }
+  }
+
+  function startQuoteRotation(isFullscreen) {
+    stopQuoteRotation();
+
+    const textEl = isFullscreen ? document.getElementById('rest-quote-text') : document.getElementById('quote-text');
+    const authorEl = isFullscreen ? document.getElementById('rest-quote-author') : document.getElementById('quote-author');
+
+    function showQuote() {
+      const quote = getNextQuote();
+      textEl.classList.add('fade-out');
+      authorEl.classList.add('fade-out');
+
+      setTimeout(() => {
+        textEl.textContent = quote.text;
+        authorEl.textContent = quote.author;
+        textEl.classList.remove('fade-out');
+        authorEl.classList.remove('fade-out');
+      }, 500);
+    }
+
+    // Show first immediately
+    const firstQuote = getNextQuote();
+    textEl.textContent = firstQuote.text;
+    authorEl.textContent = firstQuote.author;
+
+    quoteIntervalId = setInterval(showQuote, 15000);
+  }
+
   // ─── Render Functions ──────────────────────────────────────
   function renderHeader(date, info) {
     const dayIdx = date.getDay();
@@ -127,9 +168,9 @@
       }
       document.getElementById('workout-title').textContent = title;
 
-      let cycleText = `Cycle ${info.cycle} · Week ${info.weekInCycle}`;
+      let cycleText = `Cycle ${info.cycle} \u00B7 Week ${info.weekInCycle}`;
       if (info.isDeload) cycleText += ' (Deload)';
-      if (info.cardioBlock) cycleText += ` · ${info.cardioBlock}`;
+      if (info.cardioBlock) cycleText += ` \u00B7 ${info.cardioBlock}`;
       document.getElementById('cycle-info').textContent = cycleText;
     } else {
       document.getElementById('workout-title').textContent = '';
@@ -148,7 +189,6 @@
 
     let html = '';
 
-    // Dynamic warm-up section
     html += `<div class="mobility-section">`;
     html += `<div class="mobility-section-title">Dynamic Warm-Up</div>`;
     html += `<div class="target-areas">${dayMobility.targetAreas}</div>`;
@@ -166,7 +206,6 @@
     }
     html += `</ul></div>`;
 
-    // Barbell ramp-up sets
     if (liftKey) {
       const warmups = getWarmupSets(liftKey);
       html += `<div class="mobility-section">`;
@@ -183,7 +222,6 @@
       html += `</ul></div>`;
     }
 
-    // Post-lift stretch
     const postLift = mobility.postLift[dayOfWeek];
     if (postLift) {
       html += `<div class="mobility-section">`;
@@ -204,7 +242,6 @@
     const weekType = info.fiveThreeOneWeek;
     let html = '';
 
-    // Warm-up sets
     const warmups = getWarmupSets(liftKey);
     html += `<div class="workout-section section-warmup">`;
     html += `<div class="workout-section-title">Warm-Up Sets</div>`;
@@ -219,11 +256,10 @@
     }
     html += `</ul></div>`;
 
-    // Main 5/3/1 sets
     const mainSets = getMainSets(liftKey, weekType);
     const weekLabel = info.isDeload ? 'Deload' : `5/3/1 Week ${info.weekInCycle}`;
     html += `<div class="workout-section section-main">`;
-    html += `<div class="workout-section-title">Main Sets — ${weekLabel}</div>`;
+    html += `<div class="workout-section-title">Main Sets \u2014 ${weekLabel}</div>`;
     html += `<ul class="set-list">`;
     for (const set of mainSets) {
       html += `
@@ -236,12 +272,11 @@
     }
     html += `</ul></div>`;
 
-    // BBB supplemental sets
     const bbbWeight = getBBBWeight(liftKey, info.bbbPercent);
     const bbbName = schedule.bbbName || schedule.name.split(' + ')[0];
     const bbbPctDisplay = Math.round(info.bbbPercent * 100);
     html += `<div class="workout-section section-bbb">`;
-    html += `<div class="workout-section-title">BBB ${bbbName} — 5×10 @ ${bbbPctDisplay}%</div>`;
+    html += `<div class="workout-section-title">BBB ${bbbName} \u2014 5\u00D710 @ ${bbbPctDisplay}%</div>`;
     html += `<ul class="set-list">`;
     for (let i = 1; i <= 5; i++) {
       html += `
@@ -253,7 +288,6 @@
     }
     html += `</ul></div>`;
 
-    // Accessories
     const accs = workouts.accessories[liftKey];
     if (accs && accs.length > 0) {
       html += `<div class="workout-section section-accessories">`;
@@ -268,43 +302,113 @@
     container.innerHTML = html;
   }
 
-  function startQuoteRotation(isFullscreen) {
-    const textEl = isFullscreen ? document.getElementById('rest-quote-text') : document.getElementById('quote-text');
-    const authorEl = isFullscreen ? document.getElementById('rest-quote-author') : document.getElementById('quote-author');
-    const interval = isFullscreen ? 15000 : 15000;
+  // ─── Navigator ─────────────────────────────────────────────
+  const navDatePicker = document.getElementById('nav-date-picker');
+  const navPrev = document.getElementById('nav-prev');
+  const navNext = document.getElementById('nav-next');
+  const navToday = document.getElementById('nav-today');
+  const navOffsetLabel = document.getElementById('nav-offset-label');
 
-    function showQuote() {
-      const quote = getNextQuote();
-      textEl.classList.add('fade-out');
-      authorEl.classList.add('fade-out');
+  // Set picker bounds to program range (with some margin)
+  navDatePicker.min = '2026-04-06';
+  navDatePicker.max = '2027-04-04';
 
-      setTimeout(() => {
-        textEl.textContent = quote.text;
-        authorEl.textContent = quote.author;
-        textEl.classList.remove('fade-out');
-        authorEl.classList.remove('fade-out');
-      }, 500);
-    }
-
-    // Show first immediately
-    const firstQuote = getNextQuote();
-    textEl.textContent = firstQuote.text;
-    authorEl.textContent = firstQuote.author;
-
-    setInterval(showQuote, interval);
+  function formatDateForInput(date) {
+    const y = date.getFullYear();
+    const m = String(date.getMonth() + 1).padStart(2, '0');
+    const d = String(date.getDate()).padStart(2, '0');
+    return `${y}-${m}-${d}`;
   }
 
-  // ─── Main Render ───────────────────────────────────────────
-  function render() {
-    const today = new Date();
-    const info = getProgramInfo(today);
+  function isSameDay(a, b) {
+    return a.getFullYear() === b.getFullYear() &&
+           a.getMonth() === b.getMonth() &&
+           a.getDate() === b.getDate();
+  }
 
-    renderHeader(today, info);
+  function updateNavigator() {
+    const now = new Date();
+    navDatePicker.value = formatDateForInput(selectedDate);
+
+    const isToday = isSameDay(selectedDate, now);
+    navToday.classList.toggle('is-today', isToday);
+
+    if (isToday) {
+      navOffsetLabel.classList.add('hidden');
+    } else {
+      const diffDays = Math.round((toLocalDate(selectedDate) - toLocalDate(now)) / (1000 * 60 * 60 * 24));
+      const sign = diffDays > 0 ? '+' : '';
+      navOffsetLabel.textContent = `${sign}${diffDays}d from today`;
+      navOffsetLabel.classList.remove('hidden');
+    }
+  }
+
+  function navigateTo(date) {
+    selectedDate = toLocalDate(date);
+    render();
+  }
+
+  function shiftDay(delta) {
+    const next = new Date(selectedDate);
+    next.setDate(next.getDate() + delta);
+    navigateTo(next);
+  }
+
+  navPrev.addEventListener('click', () => shiftDay(-1));
+  navNext.addEventListener('click', () => shiftDay(1));
+
+  navToday.addEventListener('click', () => {
+    if (!isSameDay(selectedDate, new Date())) {
+      navigateTo(new Date());
+    }
+  });
+
+  navDatePicker.addEventListener('change', () => {
+    if (navDatePicker.value) {
+      // Parse as local date (avoid timezone shift)
+      const [y, m, d] = navDatePicker.value.split('-').map(Number);
+      navigateTo(new Date(y, m - 1, d));
+    }
+  });
+
+  // Keyboard shortcuts: left/right arrow when not focused on input
+  document.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowLeft') { shiftDay(-1); e.preventDefault(); }
+    if (e.key === 'ArrowRight') { shiftDay(1); e.preventDefault(); }
+    if (e.key === 't' || e.key === 'T') { navigateTo(new Date()); e.preventDefault(); }
+  });
+
+  // ─── Main Render ───────────────────────────────────────────
+  function resetLayout() {
+    document.getElementById('lift-layout').classList.add('hidden');
+    document.getElementById('rest-layout').classList.add('hidden');
+    document.getElementById('quote-bar').classList.add('hidden');
+
+    // Reset rest-layout to its original quote structure
+    const restLayout = document.getElementById('rest-layout');
+    restLayout.innerHTML = `
+      <div id="rest-quote" class="rest-quote">
+        <blockquote id="rest-quote-text" class="rest-quote-text"></blockquote>
+        <cite id="rest-quote-author" class="rest-quote-author"></cite>
+      </div>`;
+
+    stopQuoteRotation();
+  }
+
+  function render() {
+    resetLayout();
+    updateNavigator();
+
+    const date = selectedDate;
+    const info = getProgramInfo(date);
+
+    renderHeader(date, info);
 
     if (info.status === 'pre') {
-      // Show countdown
-      document.getElementById('rest-layout').classList.remove('hidden');
-      document.getElementById('rest-layout').innerHTML = `
+      const restLayout = document.getElementById('rest-layout');
+      restLayout.classList.remove('hidden');
+      restLayout.innerHTML = `
         <div class="countdown">
           <div class="countdown-title">Program Starts Soon</div>
           <div class="countdown-days">${info.daysUntilStart}</div>
@@ -314,11 +418,12 @@
     }
 
     if (info.status === 'post') {
-      document.getElementById('rest-layout').classList.remove('hidden');
-      document.getElementById('rest-layout').innerHTML = `
+      const restLayout = document.getElementById('rest-layout');
+      restLayout.classList.remove('hidden');
+      restLayout.innerHTML = `
         <div class="countdown">
           <div class="countdown-title">Program Complete!</div>
-          <div class="countdown-label">52 weeks of hard work — well done.</div>
+          <div class="countdown-label">52 weeks of hard work \u2014 well done.</div>
         </div>`;
       startQuoteRotation(true);
       return;
@@ -327,7 +432,6 @@
     const schedule = workouts.weeklySchedule[info.dayOfWeek];
 
     if (schedule.type === 'lift') {
-      // Show two-column layout + quote bar
       document.getElementById('lift-layout').classList.remove('hidden');
       document.getElementById('quote-bar').classList.remove('hidden');
 
@@ -335,7 +439,6 @@
       renderWorkout(schedule.lift, info);
       startQuoteRotation(false);
     } else {
-      // Cardio or rest day — fullscreen quotes
       document.getElementById('rest-layout').classList.remove('hidden');
       startQuoteRotation(true);
     }
