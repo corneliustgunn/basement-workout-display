@@ -125,29 +125,57 @@
     }
   }
 
-  function startQuoteRotation(isFullscreen) {
+  // Collect all quote display targets and update them in sync
+  function startQuoteRotation(mode) {
+    // mode: 'fullscreen' (rest day), 'lifting' (footer bar + inspiration panel)
     stopQuoteRotation();
 
-    const textEl = isFullscreen ? document.getElementById('rest-quote-text') : document.getElementById('quote-text');
-    const authorEl = isFullscreen ? document.getElementById('rest-quote-author') : document.getElementById('quote-author');
+    const targets = [];
+
+    if (mode === 'fullscreen') {
+      targets.push({
+        text: document.getElementById('rest-quote-text'),
+        author: document.getElementById('rest-quote-author')
+      });
+    } else {
+      // Footer bar (visible on non-landscape)
+      targets.push({
+        text: document.getElementById('quote-text'),
+        author: document.getElementById('quote-author')
+      });
+      // Inspiration panel (visible on landscape)
+      targets.push({
+        text: document.getElementById('insp-quote-text'),
+        author: document.getElementById('insp-quote-author')
+      });
+    }
 
     function showQuote() {
       const quote = getNextQuote();
-      textEl.classList.add('fade-out');
-      authorEl.classList.add('fade-out');
+      for (const t of targets) {
+        if (!t.text || !t.author) continue;
+        t.text.classList.add('fade-out');
+        t.author.classList.add('fade-out');
+      }
 
       setTimeout(() => {
-        textEl.textContent = quote.text;
-        authorEl.textContent = quote.author;
-        textEl.classList.remove('fade-out');
-        authorEl.classList.remove('fade-out');
+        for (const t of targets) {
+          if (!t.text || !t.author) continue;
+          t.text.textContent = quote.text;
+          t.author.textContent = quote.author;
+          t.text.classList.remove('fade-out');
+          t.author.classList.remove('fade-out');
+        }
       }, 500);
     }
 
     // Show first immediately
     const firstQuote = getNextQuote();
-    textEl.textContent = firstQuote.text;
-    authorEl.textContent = firstQuote.author;
+    for (const t of targets) {
+      if (!t.text || !t.author) continue;
+      t.text.textContent = firstQuote.text;
+      t.author.textContent = firstQuote.author;
+    }
 
     quoteIntervalId = setInterval(showQuote, 15000);
   }
@@ -425,7 +453,7 @@
           <div class="countdown-title">Program Complete!</div>
           <div class="countdown-label">52 weeks of hard work \u2014 well done.</div>
         </div>`;
-      startQuoteRotation(true);
+      startQuoteRotation('fullscreen');
       return;
     }
 
@@ -437,10 +465,10 @@
 
       renderMobility(info.dayOfWeek, schedule.lift, info);
       renderWorkout(schedule.lift, info);
-      startQuoteRotation(false);
+      startQuoteRotation('lifting');
     } else {
       document.getElementById('rest-layout').classList.remove('hidden');
-      startQuoteRotation(true);
+      startQuoteRotation('fullscreen');
     }
   }
 
