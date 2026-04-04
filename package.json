@@ -1,0 +1,12 @@
+{
+  "name": "basement-workout-display",
+  "version": "1.0.0",
+  "description": "Gym workout display for 5/3/1 BBB program",
+  "private": true,
+  "scripts": {
+    "build-data": "node scripts/build-data.js"
+  },
+  "devDependencies": {
+    "xlsx": "^0.18.5"
+  }
+}
