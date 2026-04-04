@@ -111,6 +111,92 @@ body {
   text-align: right;
 }
 
+/* ─── Program Navigator ─────────────────────────────────── */
+.navigator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  flex-shrink: 0;
+}
+
+.nav-btn {
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.3rem 0.75rem;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  line-height: 1.4;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+.nav-btn:active {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav-arrow {
+  font-size: 1.1rem;
+  padding: 0.25rem 0.6rem;
+  min-width: 2.2rem;
+  text-align: center;
+}
+
+.nav-today-btn {
+  color: var(--accent-teal);
+  border-color: rgba(0, 212, 170, 0.3);
+  font-weight: 600;
+}
+
+.nav-today-btn:hover {
+  background: var(--accent-teal-dim);
+  border-color: var(--accent-teal);
+}
+
+.nav-today-btn.is-today {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.nav-date-picker {
+  background: var(--bg-accent);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.3rem 0.5rem;
+  font-family: var(--font);
+  font-size: 0.85rem;
+  cursor: pointer;
+  color-scheme: dark;
+  transition: border-color 0.15s;
+}
+
+.nav-date-picker:hover,
+.nav-date-picker:focus {
+  border-color: rgba(255, 255, 255, 0.2);
+  outline: none;
+}
+
+.nav-offset-label {
+  font-size: 0.75rem;
+  color: var(--accent-orange);
+  font-weight: 500;
+  margin-left: 0.25rem;
+  white-space: nowrap;
+}
+
 /* ─── Lift Layout (Two Column) ──────────────────────────── */
 .lift-layout {
   display: grid;
