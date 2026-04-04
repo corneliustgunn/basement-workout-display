@@ -1,0 +1,187 @@
+{
+  "monday": {
+    "title": "Squat Day Warm-Up",
+    "targetAreas": "Hips, ankles, thoracic spine",
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Bodyweight Squat",
+        "reps": "10 reps",
+        "cue": "Full depth. Pause briefly at the bottom."
+      },
+      {
+        "order": 2,
+        "name": "Hip 90/90 Switches",
+        "reps": "5 per side",
+        "cue": "Sit on floor, both knees at 90°, rotate side to side. Keep torso tall."
+      },
+      {
+        "order": 3,
+        "name": "Ankle Rocks (half-kneeling)",
+        "reps": "10 per side",
+        "cue": "Front foot flat, drive knee over toes. Feel the stretch in the calf and ankle."
+      },
+      {
+        "order": 4,
+        "name": "Cat-Cow",
+        "reps": "8 reps",
+        "cue": "Slow, full range. Inhale on cow (arch), exhale on cat (round)."
+      },
+      {
+        "order": 5,
+        "name": "Goblet Squat Hold (15 lb DB)",
+        "reps": "20 sec",
+        "cue": "Sit into the bottom of a squat and hold. Use the DB as a counterbalance. Push knees out with elbows."
+      }
+    ]
+  },
+  "tuesday": {
+    "title": "Bench Day Warm-Up",
+    "targetAreas": "Shoulder capsule, rotator cuff, thoracic spine",
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Band Pull-Apart",
+        "reps": "15 reps",
+        "cue": "Light band, arms straight, squeeze shoulder blades at end range."
+      },
+      {
+        "order": 2,
+        "name": "Arm Circles (small → large)",
+        "reps": "10 each direction",
+        "cue": "Start with small circles, progressively widen. Both forward and backward."
+      },
+      {
+        "order": 3,
+        "name": "Wall Slides",
+        "reps": "10 reps",
+        "cue": "Back and arms against wall. Slide arms overhead, keeping contact with the wall. If you can't maintain contact, reduce range."
+      },
+      {
+        "order": 4,
+        "name": "Push-Up to Downward Dog",
+        "reps": "8 reps",
+        "cue": "Perform a push-up, then press hips up and back into downward dog. Feel the lat and shoulder stretch at the top."
+      },
+      {
+        "order": 5,
+        "name": "Dead Hang (pull-up bar)",
+        "reps": "20 sec",
+        "cue": "Relaxed grip, let the shoulders open. Breathe."
+      }
+    ]
+  },
+  "thursday": {
+    "title": "Deadlift Day Warm-Up",
+    "targetAreas": "Hamstrings, hip hinge pattern, thoracic spine",
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Hip Hinge with Broomstick/PVC",
+        "reps": "10 reps",
+        "cue": "Hold stick along spine (touching head, upper back, tailbone). Hinge at hips keeping all three contact points. This grooves the pattern."
+      },
+      {
+        "order": 2,
+        "name": "World's Greatest Stretch",
+        "reps": "5 per side",
+        "cue": "Lunge forward, plant both hands inside the front foot, rotate and reach to the ceiling with the inside hand. Covers hip flexors, t-spine rotation, hamstrings, and adductors in one movement."
+      },
+      {
+        "order": 3,
+        "name": "Leg Swings (front-to-back)",
+        "reps": "10 per side",
+        "cue": "Hold the rack for balance. Swing through full range with a straight leg. Controlled, not ballistic."
+      },
+      {
+        "order": 4,
+        "name": "Cat-Cow",
+        "reps": "8 reps",
+        "cue": "Same as Monday. Mobilizes the entire spine before axial loading."
+      },
+      {
+        "order": 5,
+        "name": "Bodyweight Romanian Deadlift",
+        "reps": "8 reps",
+        "cue": "Slow, feeling the hamstring stretch at the bottom. Squeeze glutes at the top. Pattern rehearsal before loading."
+      }
+    ]
+  },
+  "friday": {
+    "title": "OHP Day Warm-Up",
+    "targetAreas": "Shoulder flexion, lats, thoracic extension",
+    "exercises": [
+      {
+        "order": 1,
+        "name": "Band Pull-Apart",
+        "reps": "15 reps",
+        "cue": "Same as Tuesday. Activates posterior shoulder before pressing."
+      },
+      {
+        "order": 2,
+        "name": "Band Dislocate",
+        "reps": "10 reps",
+        "cue": "Wide grip on a light band. Arc it from hips to behind your back and return. Use a grip wide enough that there's zero pain. If your bands are too heavy, skip this and double the wall slides."
+      },
+      {
+        "order": 3,
+        "name": "Wall Slides",
+        "reps": "10 reps",
+        "cue": "Same as Tuesday. Overhead pressing demands the most shoulder mobility of any barbell lift."
+      },
+      {
+        "order": 4,
+        "name": "Thoracic Extension over Towel",
+        "reps": "10 reps",
+        "cue": "Roll up a towel, place it on the floor. Lie on it at mid-back level, hands behind head, extend over the towel. This directly targets the t-spine extension needed to press overhead without compensating through the lower back."
+      },
+      {
+        "order": 5,
+        "name": "Dead Hang (pull-up bar)",
+        "reps": "20 sec",
+        "cue": "Opens lats and shoulder flexion range. Tight lats are the"
+      }
+    ]
+  },
+  "rampUp": [
+    {
+      "percent": 0.4,
+      "reps": 5
+    },
+    {
+      "percent": 0.5,
+      "reps": 5
+    },
+    {
+      "percent": 0.6,
+      "reps": 3
+    }
+  ],
+  "postLift": {
+    "monday": {
+      "type": "Lower Body Stretch",
+      "duration": "5-10 min",
+      "focus": "Quads, hamstrings, hip flexors, glutes"
+    },
+    "tuesday": {
+      "type": "Upper Body Stretch",
+      "duration": "5-10 min",
+      "focus": "Chest, lats, shoulders, triceps"
+    },
+    "thursday": {
+      "type": "Lower Body Stretch",
+      "duration": "5-10 min",
+      "focus": "Hamstrings, glutes, hip flexors, lower back"
+    },
+    "friday": {
+      "type": "Upper Body Stretch",
+      "duration": "5-10 min",
+      "focus": "Shoulders, lats, chest, thoracic spine"
+    }
+  },
+  "sunday": {
+    "type": "Yoga",
+    "duration": "20-30 min",
+    "notes": "Search for \"Slow Flow\" or \"Beginner Yoga Flow\" on Peloton. Prioritize hip openers and shoulder stretches."
+  }
+}

@@ -1,0 +1,1010 @@
+{
+  "programStart": "2026-04-06",
+  "lifts": {
+    "squat": {
+      "oneRM": 300,
+      "tm": 270
+    },
+    "bench": {
+      "oneRM": 255,
+      "tm": 230
+    },
+    "deadlift": {
+      "oneRM": 360,
+      "tm": 324
+    },
+    "ohp": {
+      "oneRM": 145,
+      "tm": 131
+    }
+  },
+  "bbbProgression": [
+    {
+      "cycles": [
+        1,
+        2
+      ],
+      "percent": 0.5
+    },
+    {
+      "cycles": [
+        3,
+        4
+      ],
+      "percent": 0.55
+    },
+    {
+      "cycles": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "percent": 0.6
+    }
+  ],
+  "weekSchemes": {
+    "1": [
+      0.65,
+      0.75,
+      0.85
+    ],
+    "2": [
+      0.7,
+      0.8,
+      0.9
+    ],
+    "3": [
+      0.75,
+      0.85,
+      0.95
+    ],
+    "deload": [
+      0.4,
+      0.5,
+      0.6
+    ]
+  },
+  "weekReps": {
+    "1": [
+      "5",
+      "5",
+      "5+"
+    ],
+    "2": [
+      "3",
+      "3",
+      "3+"
+    ],
+    "3": [
+      "5",
+      "3",
+      "1+"
+    ],
+    "deload": [
+      "5",
+      "5",
+      "5"
+    ]
+  },
+  "warmupSets": [
+    {
+      "percent": 0.4,
+      "reps": 5
+    },
+    {
+      "percent": 0.5,
+      "reps": 5
+    },
+    {
+      "percent": 0.6,
+      "reps": 3
+    }
+  ],
+  "weeklySchedule": {
+    "monday": {
+      "type": "lift",
+      "lift": "squat",
+      "name": "Squat + BBB",
+      "bbbName": "Back Squat"
+    },
+    "tuesday": {
+      "type": "lift",
+      "lift": "bench",
+      "name": "Bench Press + BBB",
+      "bbbName": "Bench Press"
+    },
+    "wednesday": {
+      "type": "cardio",
+      "name": "Cardio"
+    },
+    "thursday": {
+      "type": "lift",
+      "lift": "deadlift",
+      "name": "Deadlift + BBB",
+      "bbbName": "RDL"
+    },
+    "friday": {
+      "type": "lift",
+      "lift": "ohp",
+      "name": "OHP + BBB",
+      "bbbName": "OHP"
+    },
+    "saturday": {
+      "type": "cardio",
+      "name": "Cardio - Long Zone 2"
+    },
+    "sunday": {
+      "type": "rest",
+      "name": "Rest Day"
+    }
+  },
+  "accessories": {
+    "squat": [
+      "Chin-up 5 × 10",
+      "DB Lateral Raise 3 × 15 @15 lb",
+      "Hanging Leg Raise 3 × 15"
+    ],
+    "bench": [
+      "Single-arm DB row 5 × 10",
+      "Incline DB Bench Press 5 × 10",
+      "Prone Y Raise 3 × 15 @5 lb"
+    ],
+    "deadlift": [
+      "Pull-up 5 × 10",
+      "DB Bicep Curl 3 × 12",
+      "DB Rear Delt Fly 3 × 15",
+      "Pallof Press (band) 3 × 15/side"
+    ],
+    "ohp": [
+      "BB Row (overhand, wide) 5 × 10",
+      "Close-grip BB Bench 5 × 10",
+      "Single-leg RDL 3 × 10/leg",
+      "Hip Thrust 3 × 10"
+    ]
+  },
+  "cardioZones": {
+    "ftp": 236,
+    "maxHR": 184,
+    "zone2HR": "129"
+  },
+  "calendar": [
+    {
+      "week": 1,
+      "cycle": 1,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "04/06\nSquat + BBB",
+        "tue": "04/07\nBench + BBB",
+        "wed": "04/08\nZone 2",
+        "thu": "04/09\nDeadlift + BBB",
+        "fri": "04/10\nOHP + BBB",
+        "sat": "04/11\nZone 2 Long",
+        "sun": "04/12\nRest"
+      }
+    },
+    {
+      "week": 2,
+      "cycle": 1,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "04/13\nSquat + BBB",
+        "tue": "04/14\nBench + BBB",
+        "wed": "04/15\nZone 2",
+        "thu": "04/16\nDeadlift + BBB",
+        "fri": "04/17\nOHP + BBB",
+        "sat": "04/18\nZone 2 Long",
+        "sun": "04/19\nRest"
+      }
+    },
+    {
+      "week": 3,
+      "cycle": 1,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "04/20\nSquat + BBB",
+        "tue": "04/21\nBench + BBB",
+        "wed": "04/22\nZone 2",
+        "thu": "04/23\nDeadlift + BBB",
+        "fri": "04/24\nOHP + BBB",
+        "sat": "04/25\nZone 2 Long",
+        "sun": "04/26\nRest"
+      }
+    },
+    {
+      "week": 4,
+      "cycle": 1,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "04/27\nSquat (deload)",
+        "tue": "04/28\nBench (deload)",
+        "wed": "04/29\nZone 2 (30 min)",
+        "thu": "04/30\nDeadlift (deload)",
+        "fri": "05/01\nOHP (deload)",
+        "sat": "05/02\nZone 2 (40 min)",
+        "sun": "05/03\nRest"
+      }
+    },
+    {
+      "week": 5,
+      "cycle": 2,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "05/04\nSquat + BBB",
+        "tue": "05/05\nBench + BBB",
+        "wed": "05/06\nZone 2",
+        "thu": "05/07\nDeadlift + BBB",
+        "fri": "05/08\nOHP + BBB",
+        "sat": "05/09\nZone 2 Long",
+        "sun": "05/10\nRest"
+      }
+    },
+    {
+      "week": 6,
+      "cycle": 2,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "05/11\nSquat + BBB",
+        "tue": "05/12\nBench + BBB",
+        "wed": "05/13\nZone 2",
+        "thu": "05/14\nDeadlift + BBB",
+        "fri": "05/15\nOHP + BBB",
+        "sat": "05/16\nZone 2 Long",
+        "sun": "05/17\nRest"
+      }
+    },
+    {
+      "week": 7,
+      "cycle": 2,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "50%",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "05/18\nSquat + BBB",
+        "tue": "05/19\nBench + BBB",
+        "wed": "05/20\nZone 2",
+        "thu": "05/21\nDeadlift + BBB",
+        "fri": "05/22\nOHP + BBB",
+        "sat": "05/23\nZone 2 Long",
+        "sun": "05/24\nRest"
+      }
+    },
+    {
+      "week": 8,
+      "cycle": 2,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base A",
+      "days": {
+        "mon": "05/25\nSquat (deload)",
+        "tue": "05/26\nBench (deload)",
+        "wed": "05/27\nZone 2 (30 min)",
+        "thu": "05/28\nDeadlift (deload)",
+        "fri": "05/29\nOHP (deload)",
+        "sat": "05/30\nZone 2 (40 min)",
+        "sun": "05/31\nRest"
+      }
+    },
+    {
+      "week": 9,
+      "cycle": 3,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "06/01\nSquat + BBB",
+        "tue": "06/02\nBench + BBB",
+        "wed": "06/03\nVO2 Max Intervals",
+        "thu": "06/04\nDeadlift + BBB",
+        "fri": "06/05\nOHP + BBB",
+        "sat": "06/06\nZone 2 Long",
+        "sun": "06/07\nRest"
+      }
+    },
+    {
+      "week": 10,
+      "cycle": 3,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "06/08\nSquat + BBB",
+        "tue": "06/09\nBench + BBB",
+        "wed": "06/10\nVO2 Max Intervals",
+        "thu": "06/11\nDeadlift + BBB",
+        "fri": "06/12\nOHP + BBB",
+        "sat": "06/13\nZone 2 Long",
+        "sun": "06/14\nRest"
+      }
+    },
+    {
+      "week": 11,
+      "cycle": 3,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "06/15\nSquat + BBB",
+        "tue": "06/16\nBench + BBB",
+        "wed": "06/17\nVO2 Max Intervals",
+        "thu": "06/18\nDeadlift + BBB",
+        "fri": "06/19\nOHP + BBB",
+        "sat": "06/20\nZone 2 Long",
+        "sun": "06/21\nRest"
+      }
+    },
+    {
+      "week": 12,
+      "cycle": 3,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "06/22\nSquat (deload)",
+        "tue": "06/23\nBench (deload)",
+        "wed": "06/24\nDeload Ride (30 min)",
+        "thu": "06/25\nDeadlift (deload)",
+        "fri": "06/26\nOHP (deload)",
+        "sat": "06/27\nZone 2 (40 min)",
+        "sun": "06/28\nRest"
+      }
+    },
+    {
+      "week": 13,
+      "cycle": 4,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "06/29\nSquat + BBB",
+        "tue": "06/30\nBench + BBB",
+        "wed": "07/01\nVO2 Max Intervals",
+        "thu": "07/02\nDeadlift + BBB",
+        "fri": "07/03\nOHP + BBB",
+        "sat": "07/04\nZone 2 Long",
+        "sun": "07/05\nRest"
+      }
+    },
+    {
+      "week": 14,
+      "cycle": 4,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "07/06\nSquat + BBB",
+        "tue": "07/07\nBench + BBB",
+        "wed": "07/08\nVO2 Max Intervals",
+        "thu": "07/09\nDeadlift + BBB",
+        "fri": "07/10\nOHP + BBB",
+        "sat": "07/11\nZone 2 Long",
+        "sun": "07/12\nRest"
+      }
+    },
+    {
+      "week": 15,
+      "cycle": 4,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "55%",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "07/13\nSquat + BBB",
+        "tue": "07/14\nBench + BBB",
+        "wed": "07/15\nVO2 Max Intervals",
+        "thu": "07/16\nDeadlift + BBB",
+        "fri": "07/17\nOHP + BBB",
+        "sat": "07/18\nZone 2 Long",
+        "sun": "07/19\nRest"
+      }
+    },
+    {
+      "week": 16,
+      "cycle": 4,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity A",
+      "days": {
+        "mon": "07/20\nSquat (deload)",
+        "tue": "07/21\nBench (deload)",
+        "wed": "07/22\nDeload Ride (30 min)",
+        "thu": "07/23\nDeadlift (deload)",
+        "fri": "07/24\nOHP (deload)",
+        "sat": "07/25\nZone 2 (40 min)",
+        "sun": "07/26\nRest"
+      }
+    },
+    {
+      "week": 17,
+      "cycle": 5,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "07/27\nSquat + BBB",
+        "tue": "07/28\nBench + BBB",
+        "wed": "07/29\nZone 2",
+        "thu": "07/30\nDeadlift + BBB",
+        "fri": "07/31\nOHP + BBB",
+        "sat": "08/01\nZone 2 Long",
+        "sun": "08/02\nRest"
+      }
+    },
+    {
+      "week": 18,
+      "cycle": 5,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "08/03\nSquat + BBB",
+        "tue": "08/04\nBench + BBB",
+        "wed": "08/05\nZone 2",
+        "thu": "08/06\nDeadlift + BBB",
+        "fri": "08/07\nOHP + BBB",
+        "sat": "08/08\nZone 2 Long",
+        "sun": "08/09\nRest"
+      }
+    },
+    {
+      "week": 19,
+      "cycle": 5,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "08/10\nSquat + BBB",
+        "tue": "08/11\nBench + BBB",
+        "wed": "08/12\nZone 2",
+        "thu": "08/13\nDeadlift + BBB",
+        "fri": "08/14\nOHP + BBB",
+        "sat": "08/15\nZone 2 Long",
+        "sun": "08/16\nRest"
+      }
+    },
+    {
+      "week": 20,
+      "cycle": 5,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "08/17\nSquat (deload)",
+        "tue": "08/18\nBench (deload)",
+        "wed": "08/19\nZone 2 (30 min)",
+        "thu": "08/20\nDeadlift (deload)",
+        "fri": "08/21\nOHP (deload)",
+        "sat": "08/22\nZone 2 (40 min)",
+        "sun": "08/23\nRest"
+      }
+    },
+    {
+      "week": 21,
+      "cycle": 6,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "08/24\nSquat + BBB",
+        "tue": "08/25\nBench + BBB",
+        "wed": "08/26\nZone 2",
+        "thu": "08/27\nDeadlift + BBB",
+        "fri": "08/28\nOHP + BBB",
+        "sat": "08/29\nZone 2 Long",
+        "sun": "08/30\nRest"
+      }
+    },
+    {
+      "week": 22,
+      "cycle": 6,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "08/31\nSquat + BBB",
+        "tue": "09/01\nBench + BBB",
+        "wed": "09/02\nZone 2",
+        "thu": "09/03\nDeadlift + BBB",
+        "fri": "09/04\nOHP + BBB",
+        "sat": "09/05\nZone 2 Long",
+        "sun": "09/06\nRest"
+      }
+    },
+    {
+      "week": 23,
+      "cycle": 6,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "09/07\nSquat + BBB",
+        "tue": "09/08\nBench + BBB",
+        "wed": "09/09\nZone 2",
+        "thu": "09/10\nDeadlift + BBB",
+        "fri": "09/11\nOHP + BBB",
+        "sat": "09/12\nZone 2 Long",
+        "sun": "09/13\nRest"
+      }
+    },
+    {
+      "week": 24,
+      "cycle": 6,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base B",
+      "days": {
+        "mon": "09/14\nSquat (deload)",
+        "tue": "09/15\nBench (deload)",
+        "wed": "09/16\nZone 2 (30 min)",
+        "thu": "09/17\nDeadlift (deload)",
+        "fri": "09/18\nOHP (deload)",
+        "sat": "09/19\nZone 2 (40 min)",
+        "sun": "09/20\nRest"
+      }
+    },
+    {
+      "week": 25,
+      "cycle": 7,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "09/21\nSquat + BBB",
+        "tue": "09/22\nBench + BBB",
+        "wed": "09/23\nVO2 Max Intervals",
+        "thu": "09/24\nDeadlift + BBB",
+        "fri": "09/25\nOHP + BBB",
+        "sat": "09/26\nZone 2 Long",
+        "sun": "09/27\nRest"
+      }
+    },
+    {
+      "week": 26,
+      "cycle": 7,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "09/28\nSquat + BBB",
+        "tue": "09/29\nBench + BBB",
+        "wed": "09/30\nVO2 Max Intervals",
+        "thu": "10/01\nDeadlift + BBB",
+        "fri": "10/02\nOHP + BBB",
+        "sat": "10/03\nZone 2 Long",
+        "sun": "10/04\nRest"
+      }
+    },
+    {
+      "week": 27,
+      "cycle": 7,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "10/05\nSquat + BBB",
+        "tue": "10/06\nBench + BBB",
+        "wed": "10/07\nVO2 Max Intervals",
+        "thu": "10/08\nDeadlift + BBB",
+        "fri": "10/09\nOHP + BBB",
+        "sat": "10/10\nZone 2 Long",
+        "sun": "10/11\nRest"
+      }
+    },
+    {
+      "week": 28,
+      "cycle": 7,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "10/12\nSquat (deload)",
+        "tue": "10/13\nBench (deload)",
+        "wed": "10/14\nDeload Ride (30 min)",
+        "thu": "10/15\nDeadlift (deload)",
+        "fri": "10/16\nOHP (deload)",
+        "sat": "10/17\nZone 2 (40 min)",
+        "sun": "10/18\nRest"
+      }
+    },
+    {
+      "week": 29,
+      "cycle": 8,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "10/19\nSquat + BBB",
+        "tue": "10/20\nBench + BBB",
+        "wed": "10/21\nVO2 Max Intervals",
+        "thu": "10/22\nDeadlift + BBB",
+        "fri": "10/23\nOHP + BBB",
+        "sat": "10/24\nZone 2 Long",
+        "sun": "10/25\nRest"
+      }
+    },
+    {
+      "week": 30,
+      "cycle": 8,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "10/26\nSquat + BBB",
+        "tue": "10/27\nBench + BBB",
+        "wed": "10/28\nVO2 Max Intervals",
+        "thu": "10/29\nDeadlift + BBB",
+        "fri": "10/30\nOHP + BBB",
+        "sat": "10/31\nZone 2 Long",
+        "sun": "11/01\nRest"
+      }
+    },
+    {
+      "week": 31,
+      "cycle": 8,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "11/02\nSquat + BBB",
+        "tue": "11/03\nBench + BBB",
+        "wed": "11/04\nVO2 Max Intervals",
+        "thu": "11/05\nDeadlift + BBB",
+        "fri": "11/06\nOHP + BBB",
+        "sat": "11/07\nZone 2 Long",
+        "sun": "11/08\nRest"
+      }
+    },
+    {
+      "week": 32,
+      "cycle": 8,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity B",
+      "days": {
+        "mon": "11/09\nSquat (deload)",
+        "tue": "11/10\nBench (deload)",
+        "wed": "11/11\nDeload Ride (30 min)",
+        "thu": "11/12\nDeadlift (deload)",
+        "fri": "11/13\nOHP (deload)",
+        "sat": "11/14\nZone 2 (40 min)",
+        "sun": "11/15\nRest"
+      }
+    },
+    {
+      "week": 33,
+      "cycle": 9,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "11/16\nSquat + BBB",
+        "tue": "11/17\nBench + BBB",
+        "wed": "11/18\nZone 2",
+        "thu": "11/19\nDeadlift + BBB",
+        "fri": "11/20\nOHP + BBB",
+        "sat": "11/21\nZone 2 Long",
+        "sun": "11/22\nRest"
+      }
+    },
+    {
+      "week": 34,
+      "cycle": 9,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "11/23\nSquat + BBB",
+        "tue": "11/24\nBench + BBB",
+        "wed": "11/25\nZone 2",
+        "thu": "11/26\nDeadlift + BBB",
+        "fri": "11/27\nOHP + BBB",
+        "sat": "11/28\nZone 2 Long",
+        "sun": "11/29\nRest"
+      }
+    },
+    {
+      "week": 35,
+      "cycle": 9,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "11/30\nSquat + BBB",
+        "tue": "12/01\nBench + BBB",
+        "wed": "12/02\nZone 2",
+        "thu": "12/03\nDeadlift + BBB",
+        "fri": "12/04\nOHP + BBB",
+        "sat": "12/05\nZone 2 Long",
+        "sun": "12/06\nRest"
+      }
+    },
+    {
+      "week": 36,
+      "cycle": 9,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "12/07\nSquat (deload)",
+        "tue": "12/08\nBench (deload)",
+        "wed": "12/09\nZone 2 (30 min)",
+        "thu": "12/10\nDeadlift (deload)",
+        "fri": "12/11\nOHP (deload)",
+        "sat": "12/12\nZone 2 (40 min)",
+        "sun": "12/13\nRest"
+      }
+    },
+    {
+      "week": 37,
+      "cycle": 10,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "12/14\nSquat + BBB",
+        "tue": "12/15\nBench + BBB",
+        "wed": "12/16\nZone 2",
+        "thu": "12/17\nDeadlift + BBB",
+        "fri": "12/18\nOHP + BBB",
+        "sat": "12/19\nZone 2 Long",
+        "sun": "12/20\nRest"
+      }
+    },
+    {
+      "week": 38,
+      "cycle": 10,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "12/21\nSquat + BBB",
+        "tue": "12/22\nBench + BBB",
+        "wed": "12/23\nZone 2",
+        "thu": "12/24\nDeadlift + BBB",
+        "fri": "12/25\nOHP + BBB",
+        "sat": "12/26\nZone 2 Long",
+        "sun": "12/27\nRest"
+      }
+    },
+    {
+      "week": 39,
+      "cycle": 10,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "12/28\nSquat + BBB",
+        "tue": "12/29\nBench + BBB",
+        "wed": "12/30\nZone 2",
+        "thu": "12/31\nDeadlift + BBB",
+        "fri": "01/01\nOHP + BBB",
+        "sat": "01/02\nZone 2 Long",
+        "sun": "01/03\nRest"
+      }
+    },
+    {
+      "week": 40,
+      "cycle": 10,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base C",
+      "days": {
+        "mon": "01/04\nSquat (deload)",
+        "tue": "01/05\nBench (deload)",
+        "wed": "01/06\nZone 2 (30 min)",
+        "thu": "01/07\nDeadlift (deload)",
+        "fri": "01/08\nOHP (deload)",
+        "sat": "01/09\nZone 2 (40 min)",
+        "sun": "01/10\nRest"
+      }
+    },
+    {
+      "week": 41,
+      "cycle": 11,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "01/11\nSquat + BBB",
+        "tue": "01/12\nBench + BBB",
+        "wed": "01/13\nVO2 Max Intervals",
+        "thu": "01/14\nDeadlift + BBB",
+        "fri": "01/15\nOHP + BBB",
+        "sat": "01/16\nZone 2 Long",
+        "sun": "01/17\nRest"
+      }
+    },
+    {
+      "week": 42,
+      "cycle": 11,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "01/18\nSquat + BBB",
+        "tue": "01/19\nBench + BBB",
+        "wed": "01/20\nVO2 Max Intervals",
+        "thu": "01/21\nDeadlift + BBB",
+        "fri": "01/22\nOHP + BBB",
+        "sat": "01/23\nZone 2 Long",
+        "sun": "01/24\nRest"
+      }
+    },
+    {
+      "week": 43,
+      "cycle": 11,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "01/25\nSquat + BBB",
+        "tue": "01/26\nBench + BBB",
+        "wed": "01/27\nVO2 Max Intervals",
+        "thu": "01/28\nDeadlift + BBB",
+        "fri": "01/29\nOHP + BBB",
+        "sat": "01/30\nZone 2 Long",
+        "sun": "01/31\nRest"
+      }
+    },
+    {
+      "week": 44,
+      "cycle": 11,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "02/01\nSquat (deload)",
+        "tue": "02/02\nBench (deload)",
+        "wed": "02/03\nDeload Ride (30 min)",
+        "thu": "02/04\nDeadlift (deload)",
+        "fri": "02/05\nOHP (deload)",
+        "sat": "02/06\nZone 2 (40 min)",
+        "sun": "02/07\nRest"
+      }
+    },
+    {
+      "week": 45,
+      "cycle": 12,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "02/08\nSquat + BBB",
+        "tue": "02/09\nBench + BBB",
+        "wed": "02/10\nVO2 Max Intervals",
+        "thu": "02/11\nDeadlift + BBB",
+        "fri": "02/12\nOHP + BBB",
+        "sat": "02/13\nZone 2 Long",
+        "sun": "02/14\nRest"
+      }
+    },
+    {
+      "week": 46,
+      "cycle": 12,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "02/15\nSquat + BBB",
+        "tue": "02/16\nBench + BBB",
+        "wed": "02/17\nVO2 Max Intervals",
+        "thu": "02/18\nDeadlift + BBB",
+        "fri": "02/19\nOHP + BBB",
+        "sat": "02/20\nZone 2 Long",
+        "sun": "02/21\nRest"
+      }
+    },
+    {
+      "week": 47,
+      "cycle": 12,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "02/22\nSquat + BBB",
+        "tue": "02/23\nBench + BBB",
+        "wed": "02/24\nVO2 Max Intervals",
+        "thu": "02/25\nDeadlift + BBB",
+        "fri": "02/26\nOHP + BBB",
+        "sat": "02/27\nZone 2 Long",
+        "sun": "02/28\nRest"
+      }
+    },
+    {
+      "week": 48,
+      "cycle": 12,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Intensity C",
+      "days": {
+        "mon": "03/01\nSquat (deload)",
+        "tue": "03/02\nBench (deload)",
+        "wed": "03/03\nDeload Ride (30 min)",
+        "thu": "03/04\nDeadlift (deload)",
+        "fri": "03/05\nOHP (deload)",
+        "sat": "03/06\nZone 2 (40 min)",
+        "sun": "03/07\nRest"
+      }
+    },
+    {
+      "week": 49,
+      "cycle": 13,
+      "fiveThreeOneWeek": "Week 1",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base A (Yr 2)",
+      "days": {
+        "mon": "03/08\nSquat + BBB",
+        "tue": "03/09\nBench + BBB",
+        "wed": "03/10\nZone 2",
+        "thu": "03/11\nDeadlift + BBB",
+        "fri": "03/12\nOHP + BBB",
+        "sat": "03/13\nZone 2 Long",
+        "sun": "03/14\nRest"
+      }
+    },
+    {
+      "week": 50,
+      "cycle": 13,
+      "fiveThreeOneWeek": "Week 2",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base A (Yr 2)",
+      "days": {
+        "mon": "03/15\nSquat + BBB",
+        "tue": "03/16\nBench + BBB",
+        "wed": "03/17\nZone 2",
+        "thu": "03/18\nDeadlift + BBB",
+        "fri": "03/19\nOHP + BBB",
+        "sat": "03/20\nZone 2 Long",
+        "sun": "03/21\nRest"
+      }
+    },
+    {
+      "week": 51,
+      "cycle": 13,
+      "fiveThreeOneWeek": "Week 3",
+      "bbbPercent": "60%",
+      "cardioBlock": "Base A (Yr 2)",
+      "days": {
+        "mon": "03/22\nSquat + BBB",
+        "tue": "03/23\nBench + BBB",
+        "wed": "03/24\nZone 2",
+        "thu": "03/25\nDeadlift + BBB",
+        "fri": "03/26\nOHP + BBB",
+        "sat": "03/27\nZone 2 Long",
+        "sun": "03/28\nRest"
+      }
+    },
+    {
+      "week": 52,
+      "cycle": 13,
+      "fiveThreeOneWeek": "Deload",
+      "bbbPercent": "—",
+      "cardioBlock": "Base A (Yr 2)",
+      "days": {
+        "mon": "03/29\nSquat (deload)",
+        "tue": "03/30\nBench (deload)",
+        "wed": "03/31\nZone 2 (30 min)",
+        "thu": "04/01\nDeadlift (deload)",
+        "fri": "04/02\nOHP (deload)",
+        "sat": "04/03\nZone 2 (40 min)",
+        "sun": "04/04\nRest"
+      }
+    }
+  ]
+}
