@@ -61,30 +61,40 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 1rem 1.5rem;
-  gap: 1rem;
+  padding: 0.5rem 1rem;
+  gap: 0.5rem;
 }
 
-/* ─── Header ────────────────────────────────────────────── */
+/* ─── Header (combined info + navigator) ────────────────── */
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1.25rem;
+  padding: 0.4rem 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   flex-shrink: 0;
+  gap: 0.75rem;
+  flex-wrap: wrap;
 }
 
-.header-left {
+.header-info {
   display: flex;
   align-items: baseline;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
+.header-sep {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+.header-sep::after { content: '\00B7'; }
+
 .day-name {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -92,35 +102,29 @@ body {
 }
 
 .date-display {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--text-secondary);
   font-weight: 400;
 }
 
 .workout-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: 0.02em;
 }
 
 .cycle-info {
-  font-size: 0.95rem;
+  font-size: 0.8rem;
   color: var(--text-secondary);
   font-weight: 500;
-  text-align: right;
 }
 
 /* ─── Program Navigator ─────────────────────────────────── */
 .navigator {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1rem;
-  background: var(--bg-card);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
+  gap: 0.4rem;
   flex-shrink: 0;
 }
 
@@ -210,19 +214,19 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 1.25rem;
+  padding: 0.75rem 1rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
 .panel-title {
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  margin-bottom: 0.6rem;
+  padding-bottom: 0.35rem;
   border-bottom: 2px solid var(--border-color);
   flex-shrink: 0;
 }
@@ -340,56 +344,6 @@ body {
   color: var(--text-secondary);
   line-height: 1.3;
   margin-top: 0.15rem;
-}
-
-/* ─── Ramp-up & Post-lift ───────────────────────────────── */
-.rampup-list, .postlift-info {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-}
-
-.rampup-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.3rem 0.5rem;
-  border-radius: 6px;
-  background: var(--accent-blue-dim);
-  font-size: 0.85rem;
-}
-
-.rampup-reps {
-  font-weight: 600;
-  color: var(--accent-blue);
-  min-width: 3rem;
-}
-
-.rampup-weight {
-  color: var(--text-primary);
-  font-weight: 500;
-}
-
-.rampup-percent {
-  color: var(--text-muted);
-  font-size: 0.75rem;
-}
-
-.postlift-type {
-  font-weight: 600;
-  color: var(--accent-purple);
-  font-size: 0.9rem;
-}
-
-.postlift-duration {
-  color: var(--text-secondary);
-  font-size: 0.85rem;
-}
-
-.postlift-focus {
-  color: var(--text-muted);
-  font-size: 0.8rem;
 }
 
 /* ─── Workout Content ───────────────────────────────────── */
@@ -557,7 +511,7 @@ body {
 
 /* ─── Quote Bar (Lifting Days) ──────────────────────────── */
 .quote-bar {
-  padding: 0.75rem 1.25rem;
+  padding: 0.4rem 1rem;
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
@@ -692,6 +646,18 @@ body {
 
 /* ─── Responsive ────────────────────────────────────────── */
 
+/* Large screens / TV: no scrolling, content fits */
+@media (min-width: 1024px) and (min-height: 700px) {
+  .panel {
+    overflow-y: hidden;
+  }
+}
+
+/* TV-optimized (1920x1080+) */
+@media (min-width: 1800px) {
+  html { font-size: 22px; }
+}
+
 /* Portrait tablets and smaller desktops */
 @media (max-width: 1024px) and (orientation: portrait) {
   html { font-size: 16px; }
@@ -702,121 +668,82 @@ body {
 /* Portrait phones */
 @media (max-width: 768px) and (orientation: portrait) {
   html { font-size: 14px; }
-  .app { padding: 0.5rem 0.75rem; gap: 0.5rem; }
-  .header { flex-direction: column; gap: 0.25rem; text-align: center; }
+  .app { padding: 0.4rem 0.5rem; gap: 0.35rem; }
+  .header { flex-direction: column; gap: 0.2rem; text-align: center; }
+  .header-info { justify-content: center; }
+  .navigator { justify-content: center; }
   .rest-quote-text { font-size: 1.5rem; }
 }
 
 /* ─── Landscape phones & small tablets ──────────────────── */
-/* Short + wide viewport = phone in landscape */
 @media (orientation: landscape) and (max-height: 500px) {
   html { font-size: 12px; }
 
-  body { overflow-y: auto; }
-
   .app {
-    padding: 0.3rem 0.5rem;
-    gap: 0.35rem;
-    height: 100vh;
+    padding: 0.25rem 0.5rem;
+    gap: 0.25rem;
   }
 
-  /* Compact header: single row, smaller text */
-  .header {
-    padding: 0.3rem 0.75rem;
-    border-radius: 8px;
-  }
-  .day-name { font-size: 1rem; }
-  .date-display { font-size: 0.8rem; }
-  .workout-title { font-size: 1.1rem; }
-  .cycle-info { font-size: 0.75rem; }
-
-  /* Compact navigator */
-  .navigator {
-    padding: 0.2rem 0.5rem;
-    gap: 0.35rem;
-    border-radius: 8px;
-  }
-  .nav-btn { padding: 0.15rem 0.5rem; font-size: 0.75rem; }
-  .nav-arrow { font-size: 0.9rem; padding: 0.15rem 0.4rem; min-width: 1.6rem; }
-  .nav-date-picker { padding: 0.15rem 0.35rem; font-size: 0.75rem; }
-  .nav-offset-label { font-size: 0.65rem; }
+  /* Compact header */
+  .header { padding: 0.2rem 0.6rem; gap: 0.5rem; border-radius: 8px; }
+  .day-name { font-size: 0.85rem; }
+  .date-display { font-size: 0.7rem; }
+  .workout-title { font-size: 0.85rem; }
+  .cycle-info { font-size: 0.65rem; }
+  .nav-btn { padding: 0.15rem 0.4rem; font-size: 0.7rem; }
+  .nav-arrow { font-size: 0.85rem; padding: 0.1rem 0.35rem; min-width: 1.4rem; }
+  .nav-date-picker { padding: 0.1rem 0.3rem; font-size: 0.7rem; }
+  .nav-offset-label { font-size: 0.6rem; }
 
   /* 3-column layout: Mobility | Workout | Inspiration */
   .lift-layout {
     grid-template-columns: 1fr 1.3fr 0.8fr;
-    gap: 0.5rem;
+    gap: 0.4rem;
   }
 
-  .inspiration-panel {
-    display: flex;
-  }
-
-  /* Hide the footer quote bar in landscape — quotes are in the 3rd column */
+  .inspiration-panel { display: flex; }
   .quote-bar { display: none !important; }
 
   /* Compact panels */
-  .panel {
-    padding: 0.5rem 0.6rem;
-    border-radius: 8px;
-  }
-  .panel-title {
-    font-size: 0.75rem;
-    margin-bottom: 0.4rem;
-    padding-bottom: 0.3rem;
-  }
+  .panel { padding: 0.4rem 0.5rem; border-radius: 8px; }
+  .panel-title { font-size: 0.7rem; margin-bottom: 0.3rem; padding-bottom: 0.2rem; }
 
-  /* Tighter exercise items */
-  .exercise-item { padding: 0.25rem 0.35rem; gap: 0.4rem; }
-  .exercise-number { min-width: 1.1rem; height: 1.1rem; font-size: 0.65rem; }
-  .exercise-name { font-size: 0.75rem; }
-  .exercise-reps { font-size: 0.65rem; }
-  .exercise-cue { font-size: 0.6rem; display: none; }  /* hide cues to save space */
-  .exercise-list { gap: 0.3rem; }
-
-  .target-areas { font-size: 0.65rem; margin-bottom: 0.4rem; }
-  .mobility-section { margin-bottom: 0.6rem; }
-  .mobility-section-title { font-size: 0.7rem; margin-bottom: 0.35rem; }
+  /* Tighter exercise items — hide cues to save space */
+  .exercise-item { padding: 0.2rem 0.3rem; gap: 0.35rem; }
+  .exercise-number { min-width: 1rem; height: 1rem; font-size: 0.6rem; }
+  .exercise-name { font-size: 0.7rem; }
+  .exercise-reps { font-size: 0.6rem; }
+  .exercise-cue { display: none; }
+  .exercise-list { gap: 0.2rem; }
+  .target-areas { font-size: 0.6rem; margin-bottom: 0.3rem; }
+  .mobility-section { margin-bottom: 0.4rem; }
+  .mobility-section-title { font-size: 0.65rem; margin-bottom: 0.25rem; }
   .mobility-section-title::before { width: 2px; height: 10px; }
 
   /* Tighter set items */
-  .set-item { padding: 0.2rem 0.4rem; gap: 0.5rem; font-size: 0.75rem; }
-  .set-reps { min-width: 2.8rem; }
-  .set-weight { font-size: 0.8rem; }
-  .set-list { gap: 0.2rem; }
-  .workout-section { margin-bottom: 0.5rem; }
-  .workout-section-title { font-size: 0.7rem; margin-bottom: 0.3rem; }
+  .set-item { padding: 0.15rem 0.35rem; gap: 0.4rem; font-size: 0.7rem; }
+  .set-reps { min-width: 2.5rem; }
+  .set-weight { font-size: 0.75rem; }
+  .set-list { gap: 0.15rem; }
+  .workout-section { margin-bottom: 0.35rem; }
+  .workout-section-title { font-size: 0.65rem; margin-bottom: 0.2rem; }
   .workout-section-title::before { width: 2px; height: 10px; }
-  .accessory-item { padding: 0.2rem 0.4rem; font-size: 0.7rem; }
-  .accessory-list { gap: 0.2rem; }
+  .accessory-item { padding: 0.15rem 0.35rem; font-size: 0.65rem; }
+  .accessory-list { gap: 0.15rem; }
 
-  .rampup-item { padding: 0.2rem 0.35rem; font-size: 0.7rem; }
-  .rampup-list { gap: 0.2rem; }
+  /* Inspiration panel */
+  .insp-quote-text { font-size: 0.85rem; line-height: 1.35; }
+  .insp-quote-author { font-size: 0.65rem; }
 
-  /* Inspiration panel quote sizing */
-  .insp-quote-text { font-size: 0.9rem; line-height: 1.4; }
-  .insp-quote-author { font-size: 0.7rem; }
-
-  /* Rest-day quotes in landscape */
-  .rest-quote-text { font-size: 1.4rem; }
-  .rest-quote-author { font-size: 0.85rem; }
+  /* Rest-day quotes */
+  .rest-quote-text { font-size: 1.3rem; }
+  .rest-quote-author { font-size: 0.8rem; }
   .rest-layout { padding: 0.5rem; }
 }
 
 /* ─── Wider landscape (tablets in landscape) ────────────── */
 @media (orientation: landscape) and (min-height: 501px) and (max-height: 800px) and (max-width: 1200px) {
-  /* 3-column for landscape tablets too */
-  .lift-layout {
-    grid-template-columns: 1fr 1.4fr 0.8fr;
-  }
-
-  .inspiration-panel {
-    display: flex;
-  }
-
+  .lift-layout { grid-template-columns: 1fr 1.4fr 0.8fr; }
+  .inspiration-panel { display: flex; }
   .quote-bar { display: none !important; }
-}
-
-/* TV-optimized (1920x1080) */
-@media (min-width: 1800px) {
-  html { font-size: 22px; }
 }

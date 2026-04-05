@@ -234,33 +234,6 @@
     }
     html += `</ul></div>`;
 
-    if (liftKey) {
-      const warmups = getWarmupSets(liftKey);
-      html += `<div class="mobility-section">`;
-      html += `<div class="mobility-section-title">Barbell Ramp-Up</div>`;
-      html += `<ul class="rampup-list">`;
-      for (const set of warmups) {
-        html += `
-          <li class="rampup-item">
-            <span class="rampup-reps">${set.reps} reps</span>
-            <span class="rampup-weight">${set.weight} lb</span>
-            <span class="rampup-percent">(${set.percent}%)</span>
-          </li>`;
-      }
-      html += `</ul></div>`;
-    }
-
-    const postLift = mobility.postLift[dayOfWeek];
-    if (postLift) {
-      html += `<div class="mobility-section">`;
-      html += `<div class="mobility-section-title">Post-Lift Stretch</div>`;
-      html += `<div class="postlift-info">
-        <div class="postlift-type">${postLift.type}</div>
-        <div class="postlift-duration">${postLift.duration}</div>
-        <div class="postlift-focus">${postLift.focus}</div>
-      </div></div>`;
-    }
-
     container.innerHTML = html;
   }
 
