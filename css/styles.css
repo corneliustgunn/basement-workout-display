@@ -30,7 +30,7 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: 14px;
   scroll-behavior: smooth;
 }
 
@@ -205,7 +205,7 @@ body {
 .lift-layout {
   display: grid;
   grid-template-columns: 2fr 3fr;
-  gap: 1rem;
+  gap: 0.5rem;
   flex: 1;
   min-height: 0;
 }
@@ -214,19 +214,19 @@ body {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  padding: 0.75rem 1rem;
+  padding: 0.5rem 0.75rem;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
 }
 
 .panel-title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-bottom: 0.6rem;
-  padding-bottom: 0.35rem;
+  margin-bottom: 0.35rem;
+  padding-bottom: 0.25rem;
   border-bottom: 2px solid var(--border-color);
   flex-shrink: 0;
 }
@@ -260,34 +260,34 @@ body {
 
 /* ─── Mobility Content ──────────────────────────────────── */
 .mobility-section {
-  margin-bottom: 1.25rem;
+  margin-bottom: 0;
 }
 
 .mobility-section-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--accent-teal);
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.35rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .mobility-section-title::before {
   content: '';
   display: inline-block;
   width: 3px;
-  height: 14px;
+  height: 12px;
   background: var(--accent-teal);
   border-radius: 2px;
 }
 
 .target-areas {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--text-muted);
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.35rem;
   font-style: italic;
 }
 
@@ -295,25 +295,24 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .exercise-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.6rem;
-  padding: 0.4rem 0.5rem;
+  gap: 0.5rem;
+  padding: 0.25rem 0.4rem;
   border-radius: 6px;
   background: var(--accent-teal-dim);
-  transition: background 0.2s;
 }
 
 .exercise-number {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   color: var(--accent-teal);
-  min-width: 1.4rem;
-  height: 1.4rem;
+  min-width: 1.2rem;
+  height: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,44 +328,45 @@ body {
 
 .exercise-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-primary);
 }
 
 .exercise-reps {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: var(--accent-teal);
   font-weight: 500;
+  margin-left: 0.3rem;
 }
 
 .exercise-cue {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-secondary);
-  line-height: 1.3;
-  margin-top: 0.15rem;
+  line-height: 1.25;
+  margin-top: 0.1rem;
 }
 
 /* ─── Workout Content ───────────────────────────────────── */
 .workout-section {
-  margin-bottom: 1rem;
+  margin-bottom: 0.4rem;
 }
 
 .workout-section-title {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
 }
 
 .workout-section-title::before {
   content: '';
   display: inline-block;
   width: 3px;
-  height: 14px;
+  height: 12px;
   border-radius: 2px;
 }
 
@@ -402,16 +402,16 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.15rem;
 }
 
 .set-item {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.4rem 0.6rem;
+  gap: 0.5rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 6px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .section-warmup .set-item {
@@ -437,7 +437,7 @@ body {
 
 .set-weight {
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: var(--text-primary);
 }
 
@@ -461,14 +461,14 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
+  gap: 0.15rem;
 }
 
 .accessory-item {
-  padding: 0.35rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 6px;
   background: rgba(167, 139, 250, 0.08);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-primary);
 }
 
@@ -647,15 +647,21 @@ body {
 /* ─── Responsive ────────────────────────────────────────── */
 
 /* Large screens / TV: no scrolling, content fits */
-@media (min-width: 1024px) and (min-height: 700px) {
-  .panel {
+@media (min-width: 1024px) and (min-height: 600px) {
+  .panel,
+  .panel-content {
     overflow-y: hidden;
   }
 }
 
 /* TV-optimized (1920x1080+) */
 @media (min-width: 1800px) {
-  html { font-size: 22px; }
+  html { font-size: 18px; }
+}
+
+/* Large 4K / big TV */
+@media (min-width: 2500px) {
+  html { font-size: 24px; }
 }
 
 /* Portrait tablets and smaller desktops */
