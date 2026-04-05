@@ -1,8 +1,8 @@
 (async function () {
   // ─── Load Data ─────────────────────────────────────────────
   const [workouts, mobility] = await Promise.all([
-    fetch('js/data/workouts.json?v=3').then(r => r.json()),
-    fetch('js/data/mobility.json?v=3').then(r => r.json())
+    fetch('js/data/workouts.json?v=4').then(r => r.json()),
+    fetch('js/data/mobility.json?v=4').then(r => r.json())
   ]);
 
   document.getElementById('loading').classList.add('hidden');
